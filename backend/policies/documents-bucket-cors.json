@@ -1,0 +1,9 @@
+[
+  {
+    "AllowedOrigins": ["https://<DOMINIO_CLOUDFRONT>"],
+    "AllowedMethods": ["PUT", "GET"],
+    "AllowedHeaders": ["*"],
+    "ExposeHeaders": ["ETag"],
+    "MaxAgeSeconds": 3000
+  }
+]

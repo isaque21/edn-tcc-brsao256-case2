@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "OnlyTheTwoLambdaRoles",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::<ACCOUNT_ID>:role/xyz-lambda-create-upload-role",
+          "arn:aws:iam::<ACCOUNT_ID>:role/xyz-lambda-get-document-role"
+        ]
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}

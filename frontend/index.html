@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://*.amazoncognito.com https://*.amazonaws.com; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>XYZ Documentos</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">XYZ Documentos</span>
+    <div id="user-box" class="user-box" hidden>
+      <span id="user-email" class="muted"></span>
+      <button id="logout-btn" class="btn btn-secondary" type="button">Sair</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="global-error" class="alert" role="alert" hidden></div>
+
+    <section id="login-view" class="card center" hidden>
+      <h1>Gestão de documentos</h1>
+      <p class="muted">Entre para enviar e consultar seus PDFs e imagens.</p>
+      <button id="login-btn" class="btn" type="button">Entrar</button>
+    </section>
+
+    <section id="app-view" hidden>
+      <div class="card">
+        <h2>Enviar documentos</h2>
+        <label id="dropzone" class="dropzone" for="file-input">
+          <input id="file-input" type="file" multiple>
+          <strong>Arraste arquivos aqui</strong>
+          <span>ou clique para escolher</span>
+          <small id="limits-hint" class="muted"></small>
+        </label>
+        <ul id="upload-list" class="upload-list"></ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2>Meus documentos</h2>
+          <button id="refresh-btn" class="btn btn-secondary" type="button">Atualizar</button>
+        </div>
+        <p id="docs-loading" class="muted" hidden>Carregando…</p>
+        <p id="docs-empty" class="muted" hidden>Nenhum documento enviado ainda.</p>
+        <div class="table-wrap">
+          <table id="docs-table" hidden>
+            <thead>
+              <tr>
+                <th>Arquivo</th>
+                <th>Tamanho</th>
+                <th>Enviado em</th>
+                <th>Status</th>
+                <th><span class="sr-only">Ações</span></th>
+              </tr>
+            </thead>
+            <tbody id="docs-body"></tbody>
+          </table>
+        </div>
+        <button id="more-btn" class="btn btn-secondary" type="button" hidden>Carregar mais</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
