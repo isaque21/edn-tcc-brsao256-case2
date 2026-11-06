@@ -9,10 +9,10 @@ export const config = {
   // Domínio do Cognito (managed login), com https:// e sem barra no final.
   // Ex.: https://us-east-1abc123.auth.us-east-1.amazoncognito.com
   // Se usar domínio próprio no Cognito, inclua-o também no connect-src do CSP em index.html.
-  cognitoDomain: 'https://us-east-1bosfkauae.auth.us-east-1.amazoncognito.com',
+  cognitoDomain: 'https://SEU-DOMINIO.auth.SUA-REGIAO.amazoncognito.com',
 
   // App client ID do User Pool (tipo SPA, sem client secret).
-  cognitoClientId: '75893m9dv7vta179hsvvkc8mlo',
+  cognitoClientId: 'SEU_APP_CLIENT_ID',
 
   // Precisam estar cadastradas no app client como Callback URL e Sign-out URL.
   redirectUri: `${window.location.origin}/`,
